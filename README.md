@@ -32,6 +32,9 @@ In the professional networking landscape, making meaningful connections can be c
 - **Account Management:** Improve client relations by initiating conversations with personalized messages based on client profiles.
 
 ## 🚀 Key Technologies & Features
+<img src="images/flowchart.jpg" width="600" alt="Flowchat"/>
+
+
 
 ### 1. **LangChain Agents**
 
@@ -45,8 +48,14 @@ In the professional networking landscape, making meaningful connections can be c
 
 ### 3. **API Integration**
 
+
+### Web Search for a Person Extracts Linkedin Profile URLs
 <img src="images/ice_breaker_search_web_for_LI_profile.png" width="600" alt="Web Search for LinkedIn Profile"/>
+
+### Calls Linkedin API to get Profile Data from Web Search
 <img src="images/ice_breaker_call_LI_api.png" width="600" alt="LinkedIn API Profile Search"/>
+
+### Benefits of Key BackendComponents
 
 - **RapidAPI:** Facilitates real-time LinkedIn data scraping, automating the process of fetching up-to-date profile information.
 - **Tavily Search Results:** Crawls Google to pinpoint accurate LinkedIn profiles, enhancing the robustness of profile identification.
@@ -56,6 +65,7 @@ In the professional networking landscape, making meaningful connections can be c
 
 <img src="images/ui.png" width="600" alt="Streamlit Frontend"/>
 
+### Benefits of Frontend
 - **Interactive Web App:** Built using **Streamlit**, providing a sleek and user-friendly interface for inputting names and generating icebreakers.
 - **Real-Time Generation:** Instantly produces personalized messages upon user request, enhancing user experience.
 - **Scalability:** Designed for easy extension, allowing future integration with additional social networks or professional platforms.
@@ -81,6 +91,7 @@ In the professional networking landscape, making meaningful connections can be c
    ```env
    OPENAI_API_KEY=your_openai_api_key
    RAPID_API_KEY=your_rapidapi_key
+   TAVILY_API_KEY=your_tavily_api_key
    ```
 
 4. **Run the Application:**
