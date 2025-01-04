@@ -50,6 +50,7 @@ def icebreaker(name: str):
 
         1. a short summary about the person
         2. two interesting facts about them
+        3. an cold email template for the person introducing yourself and asking for a call
 
         If you don't have enough information, you can ask for more information. 
         Just return 'I could not find enough information to create a summary'
