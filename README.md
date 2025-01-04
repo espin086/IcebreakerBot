@@ -66,7 +66,7 @@ In the professional networking landscape, making meaningful connections can be c
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/icebreakerbot.git
+   git clone https://github.com/espin086/IcebreakerBot.git
    cd icebreakerbot
    ```
 
