@@ -1,8 +1,14 @@
 # LinkedIn Icebreaker Generator with LangChain Agents
 
+<img src="images/thumbnail.jpg" width="400" alt="IcebreakerBot UI"/>
+
+
+
+## [🚀 Watch theVideo Demo](https://www.youtube.com/watch?v=eoNDemkkDI8)
+
 Welcome to **IcebreakerBot**, a powerful LinkedIn networking tool that automatically generates personalized icebreakers for professionals using advanced AI agents. Built using state-of-the-art natural language models and cloud infrastructure, this project showcases cutting-edge technology and the ability to deliver real-world applications in AI-driven networking solutions.
 
-<img src="images/ui.png" width="600" alt="IcebreakerBot UI"/>
+<img src="images/ui.png" width="400" alt="IcebreakerBot UI"/>
 
 ---
 
@@ -31,8 +37,10 @@ In the professional networking landscape, making meaningful connections can be c
 - **Networking Events:** Prepare customized icebreakers for attendees to facilitate meaningful interactions at events.
 - **Account Management:** Improve client relations by initiating conversations with personalized messages based on client profiles.
 
+
+
 ## 🚀 Key Technologies & Features
-<img src="images/flowchart.jpg" width="600" alt="Flowchat"/>
+<img src="images/flowchart.jpg" width="400" alt="Flowchart"/>
 
 
 
@@ -50,10 +58,10 @@ In the professional networking landscape, making meaningful connections can be c
 
 
 ### Web Search for a Person Extracts Linkedin Profile URLs
-<img src="images/ice_breaker_search_web_for_LI_profile.png" width="600" alt="Web Search for LinkedIn Profile"/>
+<img src="images/ice_breaker_search_web_for_LI_profile.png" width="400" alt="Web Search for LinkedIn Profile"/>
 
 ### Calls Linkedin API to get Profile Data from Web Search
-<img src="images/ice_breaker_call_LI_api.png" width="600" alt="LinkedIn API Profile Search"/>
+<img src="images/ice_breaker_call_LI_api.png" width="400" alt="LinkedIn API Profile Search"/>
 
 ### Benefits of Key BackendComponents
 
@@ -63,7 +71,7 @@ In the professional networking landscape, making meaningful connections can be c
 
 ### 4. **Streamlit Frontend**
 
-<img src="images/ui.png" width="600" alt="Streamlit Frontend"/>
+<img src="images/ui.png" width="400" alt="Streamlit Frontend"/>
 
 ### Benefits of Frontend
 - **Interactive Web App:** Built using **Streamlit**, providing a sleek and user-friendly interface for inputting names and generating icebreakers.
