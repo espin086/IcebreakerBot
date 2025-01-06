@@ -1,18 +1,23 @@
-import os
+"""
+This file contains the code for the icebreaker. It is the main file that runs the agent. 
+"""
+
+# Standard library imports
 import logging
+import os
+
+# Third-party imports
 from dotenv import load_dotenv
-
-load_dotenv()
-
-# Loading AI modules
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain_ollama import ChatOllama
 
-# Custom code
-from agents import lookup
-from linkedin import get_linkedin_data
+# Local application imports
+from icebreaker.agents import lookup
+from icebreaker.linkedin import get_linkedin_data
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -24,28 +29,32 @@ SECRET_KEY = os.getenv("OPENAI_API_KEY")
 
 
 def icebreaker(name: str):
-    logging.info(f"Starting icebreaker for name: {name}")
+    """
+    This function is the main function that runs the icebreaker. 
+    It takes a name as input and returns a summary of the LinkedIn information for the person.
+    """
+    logging.info("Starting icebreaker for name: %s", name)
 
     # TOOL: Get the LinkedIn ID of person by doing a LinkedIn search with an AI agent
     try:
-        _, id = lookup(name)
-        logging.info(f"LinkedIn ID for {name}: {id}")
-    except Exception as e:
+        _, linkedin_id = lookup(name)
+        logging.info("LinkedIn ID for %s: %s", name, linkedin_id)
+    except LookupError as _:
         logging.error(
-            f"Error occurred during LinkedIn ID lookup for {name}", exc_info=True
+            "Error occurred during LinkedIn ID lookup for %s", name
         )
         return None
 
-    # Use a LinkedIn function to get the LinkedIn information by LinkedIn ID found by the lookup function and fed into the LinkedIn function
+    # Use a LinkedIn function to get the LinkedIn with the ID.
     try:
-        linked_info = get_linkedin_data(name=f"{id}")
+        linked_info = get_linkedin_data(name=f"{linkedin_id}")
         if "message" in linked_info:
-            raise Exception(linked_info["message"])
-        logging.info(f"LinkedIn information for {name}: {linked_info}")
+            raise LookupError(linked_info["message"])
+        logging.info("LinkedIn information for %s: %s", name, linked_info)
 
-    except Exception as e:
+    except LookupError as e:
         logging.error(
-            f"Error occurred while fetching LinkedIn data for {name}", exc_info=True
+            "Error occurred while fetching LinkedIn data for %s: %s", name, e, exc_info=True
         )
         return None
 
@@ -54,7 +63,6 @@ def icebreaker(name: str):
         input_variables=["information"],
         template="""
         Given the LinkedIn information {information} about a person, I want you to
-        create: 
 
         1. a short summary about the person
         2. two interesting facts about them
@@ -77,10 +85,10 @@ def icebreaker(name: str):
 
     try:
         res = chain.invoke(input={"information": linked_info})
-        logging.info(f"Generated summary for {name}: {res}")
-    except Exception as e:
+        logging.info("Generated summary for %s: %s", name, res)
+    except LookupError as e:
         logging.error(
-            f"Error occurred during chain invocation for {name}", exc_info=True
+            "Error occurred during chain invocation for %s: %s", name, e, exc_info=True
         )
         return None
 

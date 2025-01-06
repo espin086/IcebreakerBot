@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Loading a tool
-from tools import get_profile_url_tavily
+from icebreaker.tools import get_profile_url_tavily
 
 from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
