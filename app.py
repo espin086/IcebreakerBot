@@ -1,10 +1,11 @@
 import streamlit as st
 from icebreaker import icebreaker
 
+
 # Streamlit app
 def main():
     st.title("LinkedIn Icebreaker Generator")
-    
+
     # Input from user
     name = st.text_input("Enter name of person to find on Linkedin")
 
@@ -19,6 +20,7 @@ def main():
                 st.error(f"Error occurred: {e}")
         else:
             st.warning("Please enter a LinkedIn username.")
+
 
 if __name__ == "__main__":
     main()

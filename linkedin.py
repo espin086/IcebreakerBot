@@ -6,7 +6,7 @@ import json
 
 load_dotenv()
 
-RAPID_API_KEY= os.getenv("RAPID_API_KEY")
+RAPID_API_KEY = os.getenv("RAPID_API_KEY")
 
 
 def remove_empty_pairs(json_obj):
@@ -26,21 +26,18 @@ def remove_empty_pairs(json_obj):
         return json_obj
 
 
-
-
 def scrape_linkedin_data(name):
 
     url = "https://linkedin-data-api.p.rapidapi.com/data-connection-count"
 
-    querystring = {"username":name}
+    querystring = {"username": name}
 
     headers = {
         "x-rapidapi-key": f"{RAPID_API_KEY}",
-        "x-rapidapi-host": "linkedin-data-api.p.rapidapi.com"
+        "x-rapidapi-host": "linkedin-data-api.p.rapidapi.com",
     }
 
     response = requests.get(url, headers=headers, params=querystring)
-    
 
     return response.json()
 
@@ -51,9 +48,7 @@ def get_linkedin_data(name):
     return cleaned_response
 
 
-
 if __name__ == "__main__":
 
     response = get_linkedin_data(name="juliacervantesespinoza")
     print(response)
-
