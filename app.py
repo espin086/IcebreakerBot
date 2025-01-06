@@ -1,5 +1,5 @@
 import streamlit as st
-from icebreaker import icebreaker
+from icebreaker.icebreaker import icebreaker
 
 
 # Streamlit app
